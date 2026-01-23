@@ -2,7 +2,35 @@
 
 This repo contains the training wrappers and dataset manifests used in the paper. The core idea is to train SDXL ControlNet variants with different objectives (Baseline, OVF, DFF) and evaluate fidelity between KITTI (real) and VirtualKITTI2 (synthetic) paired images.
 
+## Paper
+Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery
+
+- arXiv: https://arxiv.org/abs/2512.16468
+- DOI: https://doi.org/10.48550/arXiv.2512.16468
+
+### Cite this work
+If you use this repository, please cite the paper:
+
+```
+@article{safaei2025quantifying,
+  title={Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery},
+  author={Safaei, Danial and Khastgir, Siddartha and Alirezaei, Mohsen and Ploeg, Jeroen and Tong, Son and Zhao, Xingyu},
+  journal={arXiv preprint arXiv:2512.16468},
+  year={2025},
+  doi={10.48550/arXiv.2512.16468},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  eprint={2512.16468}
+}
+```
+
 ## What’s in this repo (minimal)
+
+### Repository layout
+- `scripts/` — runnable training wrappers and helper scripts.
+- `data/` — dataset manifest JSONL files.
+- `ControlNet/` — generated SDXL training scripts (produced at runtime).
+- `out_*/` — training outputs (not tracked).
 
 ### Training scripts
 These are the entrypoints you run directly with Python:
@@ -71,6 +99,18 @@ Per‑SUT DFF thresholds (95th percentile on calibration split):
 ## Notes
 - DFF is computed using CF‑XAI pooled decisive maps (16×16) with $K=80$ counterfactual seeds.
 - OVF for segmentation uses IoU for the paper’s main results.
+
+## Data availability
+The repository includes only JSONL manifests under `data/`. The underlying KITTI and VirtualKITTI2 images are not distributed here. Obtain them from their official sources and pass local paths via the CLI flags shown above.
+
+## Reproducibility checklist
+- Use the same dataset split and pairing manifests from `data/`.
+- Use the same SUT (steering/YOLOP-DA/YOLOP-LL) and threshold calibration described in the paper.
+- Ensure the upstream SDXL ControlNet template in `ControlNet/` matches the expected patch markers.
+- Record the random seed, $K$, and N_SAMPLES used for each evaluation run.
+
+## License
+This repository is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
 ## Contact
 For questions or replication issues, open an issue or contact the author.

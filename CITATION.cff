@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper."
+title: "Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery"
+authors:
+  - family-names: Safaei
+    given-names: Danial
+  - family-names: Khastgir
+    given-names: Siddartha
+  - family-names: Alirezaei
+    given-names: Mohsen
+  - family-names: Ploeg
+    given-names: Jeroen
+  - family-names: Tong
+    given-names: Son
+  - family-names: Zhao
+    given-names: Xingyu
+version: "1.0.0"
+date-released: "2025-12-18"
+doi: "10.48550/arXiv.2512.16468"
+url: "https://arxiv.org/abs/2512.16468"
+repository-code: "https://github.com/Danial-Safaei/DFF"
+keywords:
+  - decisive feature fidelity
+  - DFF
+  - OVF
+  - synthetic data
+  - virtual kitti
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery"
+  authors:
+    - family-names: Safaei
+      given-names: Danial
+    - family-names: Khastgir
+      given-names: Siddartha
+    - family-names: Alirezaei
+      given-names: Mohsen
+    - family-names: Ploeg
+      given-names: Jeroen
+    - family-names: Tong
+      given-names: Son
+    - family-names: Zhao
+      given-names: Xingyu
+  doi: "10.48550/arXiv.2512.16468"
+  url: "https://arxiv.org/abs/2512.16468"
+  journal: "arXiv preprint arXiv:2512.16468"
+  year: 2025
