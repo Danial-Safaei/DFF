@@ -7,13 +7,13 @@ This repo contains the training wrappers and dataset manifests used in the paper
 ### Training scripts
 These are the entrypoints you run directly with Python:
 
-- `train_k2vk_controlnet_vkitti_seg_baseline_FIXED.py` — Baseline reconstruction-only ControlNet training.
-- `train_k2vk_controlnet_vkitti_seg_ovf_steering_CORRECTED.py` — OVF training (steering head).
-- `train_k2vk_controlnet_vkitti_seg_ovf_yolop_da_CORRECTED.py` — OVF training (YOLOP drivable area head).
-- `train_k2vk_controlnet_vkitti_seg_ovf_yolop_ll_CORRECTED.py` — OVF training (YOLOP lane line head).
-- `train_k2vk_controlnet_vkitti_seg_dff_steering_COUNTERFACTUAL.py` — DFF training with CF‑XAI (steering).
-- `train_k2vk_controlnet_vkitti_seg_dff_yolop_da_COUNTERFACTUAL.py` — DFF training with CF‑XAI (drivable area).
-- `train_k2vk_controlnet_vkitti_seg_dff_yolop_ll_COUNTERFACTUAL.py` — DFF training with CF‑XAI (lane lines).
+- `scripts/train_k2vk_controlnet_vkitti_seg_baseline_FIXED.py` — Baseline reconstruction-only ControlNet training.
+- `scripts/train_k2vk_controlnet_vkitti_seg_ovf_steering_CORRECTED.py` — OVF training (steering head).
+- `scripts/train_k2vk_controlnet_vkitti_seg_ovf_yolop_da_CORRECTED.py` — OVF training (YOLOP drivable area head).
+- `scripts/train_k2vk_controlnet_vkitti_seg_ovf_yolop_ll_CORRECTED.py` — OVF training (YOLOP lane line head).
+- `scripts/train_k2vk_controlnet_vkitti_seg_dff_steering_COUNTERFACTUAL.py` — DFF training with CF‑XAI (steering).
+- `scripts/train_k2vk_controlnet_vkitti_seg_dff_yolop_da_COUNTERFACTUAL.py` — DFF training with CF‑XAI (drivable area).
+- `scripts/train_k2vk_controlnet_vkitti_seg_dff_yolop_ll_COUNTERFACTUAL.py` — DFF training with CF‑XAI (lane lines).
 
 ### Dataset manifests (JSONL)
 Each JSONL row contains:
@@ -43,7 +43,7 @@ Marker‑based patching fails fast if the upstream script changes to prevent sil
 Example usage (adjust paths):
 
 ```bash
-python train_k2vk_controlnet_vkitti_seg_baseline_FIXED.py \
+python scripts/train_k2vk_controlnet_vkitti_seg_baseline_FIXED.py \
   --vkitti_seg_path /path/to/vkitti_seg \
   --kitti_images_path /path/to/kitti \
   --output_dir out_01_baseline \
@@ -51,7 +51,7 @@ python train_k2vk_controlnet_vkitti_seg_baseline_FIXED.py \
 ```
 
 ```bash
-python train_k2vk_controlnet_vkitti_seg_ovf_steering_CORRECTED.py \
+python scripts/train_k2vk_controlnet_vkitti_seg_ovf_steering_CORRECTED.py \
   --vkitti_seg_path /path/to/vkitti_seg \
   --kitti_images_path /path/to/kitti \
   --output_dir out_02_ovf_steering_beta0p70 \
