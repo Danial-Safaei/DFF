@@ -22,13 +22,13 @@ Each JSONL row contains:
 - `prompt`: short text prompt (e.g., “virtual kitti style”)
 
 Manifests used by each variant:
-- `vkitti_baseline_pairs.jsonl`
-- `vkitti_ovf_steering_corrected_pairs.jsonl`
-- `vkitti_ovf_yolop_da_corrected_pairs.jsonl`
-- `vkitti_ovf_yolop_ll_corrected_pairs.jsonl`
-- `vkitti_dff_steering_counterfactual_pairs.jsonl`
-- `vkitti_dff_yolop_da_counterfactual_pairs.jsonl`
-- `vkitti_dff_yolop_ll_counterfactual_pairs.jsonl`
+- `data/vkitti_baseline_pairs.jsonl`
+- `data/vkitti_ovf_steering_corrected_pairs.jsonl`
+- `data/vkitti_ovf_yolop_da_corrected_pairs.jsonl`
+- `data/vkitti_ovf_yolop_ll_corrected_pairs.jsonl`
+- `data/vkitti_dff_steering_counterfactual_pairs.jsonl`
+- `data/vkitti_dff_yolop_da_counterfactual_pairs.jsonl`
+- `data/vkitti_dff_yolop_ll_counterfactual_pairs.jsonl`
 
 ## How the scripts work
 All training wrappers follow the same pattern:
