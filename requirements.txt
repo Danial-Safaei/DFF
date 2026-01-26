@@ -1,0 +1,24 @@
+# Minimal runtime requirements (pin versions to match training environment)
+# Core training stack
+accelerate==1.9.0
+diffusers @ git+https://github.com/huggingface/diffusers.git@cde02b061b6f13012dfefe76bc8abf5e6ec6d3f3
+transformers==4.53.2
+datasets==4.3.0
+peft==0.16.0
+xformers==0.0.31.post1
+bitsandbytes==0.46.1
+
+# PyTorch (CUDA build) — adjust to your CUDA version
+# Example (CUDA 12.8):
+torch==2.7.1+cu128
+torchvision==0.22.1+cu128
+torchaudio==2.7.1+cu128
+
+# Common utilities
+numpy==1.26.4
+scipy==1.16.0
+pandas==2.3.2
+opencv-python==4.12.0.88
+pillow==11.0.0
+safetensors==0.5.3
+wandb==0.21.0

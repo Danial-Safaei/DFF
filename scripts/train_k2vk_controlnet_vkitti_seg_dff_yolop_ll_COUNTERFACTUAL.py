@@ -54,12 +54,12 @@ import os
 # IMPORTANT: the generated patched script is written to ControlNet/ (see VKITTITrainingBase),
 # so relative "Path(__file__).parent.parent / training/vkitti_seg" is often WRONG.
 import sys as _sys_for_loader
-_ABS_VKITTI_SEG = "/networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg"
+_ABS_VKITTI_SEG = "/networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/vkitti_seg"
 if _ABS_VKITTI_SEG not in _sys_for_loader.path:
     _sys_for_loader.path.insert(0, _ABS_VKITTI_SEG)
 try:
     _here = Path(__file__).resolve()
-    _fallback = _here.parent.parent.parent / "training" / "vkitti_seg"
+    _fallback = _here.parent.parent / "vkitti_seg"
     if str(_fallback) not in _sys_for_loader.path:
         _sys_for_loader.path.append(str(_fallback))
 except Exception:
@@ -273,7 +273,7 @@ CF_DOWNSAMPLE = 16
     if not yolop_ll_model_path or not os.path.exists(yolop_ll_model_path):
         raise RuntimeError(f"DFF YOLOP LL requires a valid --yolop_ll_model_path; got: {yolop_ll_model_path}")
 
-    yolop_root = "/networkhome/WMGDS/safaei_d/3_generators/models/pretrained/YOLOP"
+    yolop_root = str(Path(__file__).parent.parent / "third_party" / "YOLOP")
     print("🔄 Initializing YOLOP LL via load_yolop_branches; root=", yolop_root, "; weights=", yolop_ll_model_path)
     # Match dtype to accelerator mixed precision to avoid (bf16/fp16) input vs fp32 bias errors
     try:
