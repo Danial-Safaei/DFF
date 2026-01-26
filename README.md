@@ -29,7 +29,10 @@ If you use this repository, please cite the paper:
 ### Repository layout
 - `scripts/` — runnable training wrappers and helper scripts.
 - `data/` — dataset manifest JSONL files.
-- `ControlNet/` — generated SDXL training scripts (produced at runtime).
+- `vkitti_seg/` — core helpers (training base + loaders).
+- `models/` — external SUT assets (steering arch/weights, YOLOP weights).
+- `third_party/YOLOP/` — YOLOP repo (download separately; see below).
+- `ControlNet/` — upstream SDXL template + generated scripts.
 - `out_*/` — training outputs (not tracked).
 
 ### Training scripts
@@ -68,6 +71,16 @@ All training wrappers follow the same pattern:
 Marker‑based patching fails fast if the upstream script changes to prevent silent divergence.
 
 ## Running
+### External model setup (required)
+1) Steering architecture is vendored under `models/architectures/`.
+2) Download YOLOP repo into `third_party/YOLOP`:
+```bash
+git clone https://github.com/hustvl/YOLOP third_party/YOLOP
+```
+3) Download model weights from the external link (to be provided) and place them at:
+    - `models/weights/final_model.pth`
+    - `models/pretrained/YOLOP/weights/End-to-end.pth`
+
 Example usage (adjust paths):
 
 ```bash
@@ -102,6 +115,9 @@ Per‑SUT DFF thresholds (95th percentile on calibration split):
 
 ## Data availability
 The repository includes only JSONL manifests under `data/`. The underlying KITTI and VirtualKITTI2 images are not distributed here. Obtain them from their official sources and pass local paths via the CLI flags shown above.
+
+## Baseline dataset helper
+`create_kitti_to_vkitti_dataset.py` creates the baseline KITTI→V-KITTI dataset structure expected by the baseline wrapper.
 
 ## Reproducibility checklist
 - Use the same dataset split and pairing manifests from `data/`.

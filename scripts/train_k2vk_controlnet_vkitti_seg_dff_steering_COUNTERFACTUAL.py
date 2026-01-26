@@ -85,12 +85,12 @@ import torchvision.transforms as transforms
 
 # Make sure the generated script (written under ControlNet/) can import our local helpers.
 # Rely on an absolute path first (HPC layout), with a conservative relative fallback.
-_ABS_VKITTI_SEG = "/networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg"
+_ABS_VKITTI_SEG = "/networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/vkitti_seg"
 if _ABS_VKITTI_SEG not in sys.path:
     sys.path.insert(0, _ABS_VKITTI_SEG)
 try:
     _here = Path(__file__).resolve()
-    _fallback = _here.parent.parent.parent / "training" / "vkitti_seg"
+    _fallback = _here.parent.parent / "vkitti_seg"
     if str(_fallback) not in sys.path:
         sys.path.append(str(_fallback))
 except Exception:
@@ -274,12 +274,15 @@ CF_DOWNSAMPLE = 16
     if not steering_model_path or not os.path.exists(steering_model_path):
         raise RuntimeError(f"DFF steering requires a valid --steering_model_path; got: {steering_model_path}")
 
-    # Resolve the steering architecture robustly. Prefer project absolute path.
+    # Resolve the steering architecture robustly. Prefer repo-local path, then HPC fallback.
+    local_arch = Path(__file__).parent.parent / "models" / "architectures" / "For_steering_angle_prediction_tweaked_v3.py"
     proj_arch = Path("/networkhome/WMGDS/safaei_d/3_generators/models/architectures/For_steering_angle_prediction_tweaked_v3.py")
-    if proj_arch.exists():
+    if local_arch.exists():
+        arch_path = str(local_arch)
+    elif proj_arch.exists():
         arch_path = str(proj_arch)
     else:
-        arch_path = str(Path(__file__).parent.parent / "models" / "architectures" / "For_steering_angle_prediction_tweaked_v3.py")
+        arch_path = str(local_arch)
 
     print("🔄 Loading steering model via load_steering_model; arch=", arch_path, "; weights=", steering_model_path)
     # Match dtype to accelerator mixed precision to avoid (bf16/fp16) input vs fp32 bias errors

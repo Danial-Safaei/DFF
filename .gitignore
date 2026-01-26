@@ -4,11 +4,16 @@ notebook_cache/
 wandb/
 debug_logs/
 results/
-ControlNet/
+ControlNet/*
+!ControlNet/train_controlnet_sdxl_original.py
 controlnet_*_dataset/
 out_*/
 *.pt
 *.pth
+*.pyc
+!models/architectures/For_steering_angle_prediction_tweaked_v3.py
+models/weights/final_model.pth
+models/pretrained/YOLOP/weights/End-to-end.pth
 *.safetensors
 *.ckpt
 *.bin

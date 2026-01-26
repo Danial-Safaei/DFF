@@ -6,9 +6,10 @@ export DEBUG_GRAD_CHECK=1
 source /networkhome/WMGDS/safaei_d/miniconda3/etc/profile.d/conda.sh
 conda activate img2img
 
-accelerate launch /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/ControlNet/train_controlnet_sdxl_vkitti_ovf_yolop_ll_corrected_20251221_183159.py \
-  --train_data_dir /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/controlnet_vkitti_ovf_yolop_ll_corrected_dataset \
-  --output_dir /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/out_04_ovf_yolop_ll_beta0p45_DEBUG \
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+accelerate launch "${ROOT_DIR}/ControlNet/train_controlnet_sdxl_vkitti_ovf_yolop_ll_corrected_20251221_183159.py" \
+  --train_data_dir "${ROOT_DIR}/controlnet_vkitti_ovf_yolop_ll_corrected_dataset" \
+  --output_dir "${ROOT_DIR}/out_04_ovf_yolop_ll_beta0p45_DEBUG" \
   --pretrained_model_name_or_path stabilityai/stable-diffusion-xl-base-1.0 \
   --controlnet_model_name_or_path SargeZT/sdxl-controlnet-seg \
   --image_column image --conditioning_image_column conditioning_image --caption_column prompt \
@@ -22,6 +23,6 @@ accelerate launch /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_f
   --set_grads_to_none --dataloader_num_workers 2 --allow_tf32 \
   --enable_xformers_memory_efficient_attention \
   --checkpointing_steps 999999999 \
-  --yolop_root /networkhome/WMGDS/safaei_d/3_generators/models/pretrained/YOLOP \
-  --yolop_weights_path /networkhome/WMGDS/safaei_d/3_generators/models/pretrained/YOLOP/weights/End-to-end.pth \
+  --yolop_root "${ROOT_DIR}/third_party/YOLOP" \
+  --yolop_weights_path "${ROOT_DIR}/models/pretrained/YOLOP/weights/End-to-end.pth" \
   --beta 0.45

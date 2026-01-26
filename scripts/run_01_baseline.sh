@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-accelerate launch /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/ControlNet/train_controlnet_sdxl_vkitti_baseline_20251221_185155.py \
-  --train_data_dir /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg/controlnet_kitti_to_vkitti_dataset \
-  --output_dir /networkhome/WMGDS/safaei_d/3_generators/training/vkitti_seg_final7/out_01_baseline \
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+accelerate launch "${ROOT_DIR}/ControlNet/train_controlnet_sdxl_vkitti_baseline_20251221_185155.py" \
+  --train_data_dir "${ROOT_DIR}/controlnet_kitti_to_vkitti_dataset" \
+  --output_dir "${ROOT_DIR}/out_01_baseline" \
   --pretrained_model_name_or_path stabilityai/stable-diffusion-xl-base-1.0 \
   --controlnet_model_name_or_path SargeZT/sdxl-controlnet-seg \
   --image_column target_image --conditioning_image_column conditioning_image --caption_column prompt \

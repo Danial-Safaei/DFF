@@ -67,8 +67,10 @@ class VKITTIOVFYolopLLCorrected(VKITTITrainingBase):
                 raise RuntimeError(f"Required patch marker not found ({label}): {marker!r}")
 
         beta = kwargs.get('beta', 0.4)
-        yolop_root = kwargs.get('yolop_root', '/networkhome/WMGDS/safaei_d/3_generators/models/pretrained/YOLOP')
-        yolop_weights_path = kwargs.get('yolop_weights_path', '/networkhome/WMGDS/safaei_d/3_generators/models/pretrained/YOLOP/weights/End-to-end.pth')
+        default_yolop_root = _THIS_DIR.parent / "third_party" / "YOLOP"
+        default_yolop_weights = _THIS_DIR.parent / "models" / "pretrained" / "YOLOP" / "weights" / "End-to-end.pth"
+        yolop_root = kwargs.get('yolop_root', str(default_yolop_root))
+        yolop_weights_path = kwargs.get('yolop_weights_path', str(default_yolop_weights))
         modifications = []
 
         import_marker = "import diffusers"

@@ -78,14 +78,10 @@ class VKITTIOVFSteeringTrainerCorrected(VKITTITrainingBase):
                 raise RuntimeError(f"Required patch marker not found ({label}): {marker!r}")
 
         beta = kwargs.get('beta', 0.6)
-        steering_arch_path = kwargs.get(
-            'steering_arch_path',
-            '/networkhome/WMGDS/safaei_d/3_generators/models/architectures/For_steering_angle_prediction_tweaked_v3.py'
-        )
-        steering_weights_path = kwargs.get(
-            'steering_weights_path',
-            '/networkhome/WMGDS/safaei_d/3_generators/models/weights/final_model.pth'
-        )
+        default_arch = _THIS_DIR.parent / "models" / "architectures" / "For_steering_angle_prediction_tweaked_v3.py"
+        default_weights = _THIS_DIR.parent / "models" / "weights" / "final_model.pth"
+        steering_arch_path = kwargs.get('steering_arch_path', str(default_arch))
+        steering_weights_path = kwargs.get('steering_weights_path', str(default_weights))
         modifications = []
 
         # 1) Import block insertion with robust helpers
