@@ -3,24 +3,28 @@
 This repo contains the training wrappers and dataset manifests used in the paper. The core idea is to train SDXL ControlNet variants with different objectives (Baseline, OVF, DFF) and evaluate fidelity between KITTI (real) and VirtualKITTI2 (synthetic) paired images.
 
 ## Paper
-Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery
 
-- arXiv: https://arxiv.org/abs/2512.16468
-- DOI: https://doi.org/10.48550/arXiv.2512.16468
+**Quantifying Fidelity: A Decisive Feature Approach to Comparing Synthetic and Real Imagery**
+Danial Safaei, Siddartha Khastgir, Mohsen Alirezaei, Jeroen Ploeg, Chih-Hong Cheng, Son Tong, Xingyu Zhao
+
+Published in the *2026 IEEE Intelligent Vehicles Symposium (IV)*, pp. 847-854, Detroit, MI, USA, June 2026.
+
+- IEEE Xplore (DOI): https://doi.org/10.1109/IV66570.2026.11624013
+- arXiv preprint: https://arxiv.org/abs/2512.16468
 
 ### Cite this work
-If you use this repository, please cite the paper:
+If you use this repository, please cite the published version:
 
-```
-@article{safaei2025quantifying,
-  title={Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery},
-  author={Safaei, Danial and Khastgir, Siddartha and Alirezaei, Mohsen and Ploeg, Jeroen and Tong, Son and Zhao, Xingyu},
-  journal={arXiv preprint arXiv:2512.16468},
-  year={2025},
-  doi={10.48550/arXiv.2512.16468},
-  archivePrefix={arXiv},
-  primaryClass={cs.AI},
-  eprint={2512.16468}
+```bibtex
+@inproceedings{safaei2026quantifying,
+  title     = {Quantifying Fidelity: A Decisive Feature Approach to Comparing Synthetic and Real Imagery},
+  author    = {Safaei, Danial and Khastgir, Siddartha and Alirezaei, Mohsen and Ploeg, Jeroen and Cheng, Chih-Hong and Tong, Son and Zhao, Xingyu},
+  booktitle = {2026 IEEE Intelligent Vehicles Symposium (IV)},
+  pages     = {847--854},
+  year      = {2026},
+  address   = {Detroit, MI, USA},
+  publisher = {IEEE},
+  doi       = {10.1109/IV66570.2026.11624013}
 }
 ```
 
@@ -77,7 +81,7 @@ Marker‑based patching fails fast if the upstream script changes to prevent sil
 ```bash
 git clone https://github.com/hustvl/YOLOP third_party/YOLOP
 ```
-3) Download model weights from the external link (to be provided) and place them at:
+3) Obtain the system-under-test weights (see "Data availability" below) and place them at:
     - `models/weights/final_model.pth`
     - `models/pretrained/YOLOP/weights/End-to-end.pth`
 

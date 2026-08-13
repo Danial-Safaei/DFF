@@ -1,48 +1,65 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the paper."
-title: "Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery"
+title: "Quantifying Fidelity: A Decisive Feature Approach to Comparing Synthetic and Real Imagery"
 authors:
   - family-names: Safaei
     given-names: Danial
+    orcid: "https://orcid.org/0000-0002-4443-8763"
   - family-names: Khastgir
     given-names: Siddartha
   - family-names: Alirezaei
     given-names: Mohsen
   - family-names: Ploeg
     given-names: Jeroen
+  - family-names: Cheng
+    given-names: Chih-Hong
   - family-names: Tong
     given-names: Son
   - family-names: Zhao
     given-names: Xingyu
 version: "1.0.0"
-date-released: "2025-12-18"
-doi: "10.48550/arXiv.2512.16468"
-url: "https://arxiv.org/abs/2512.16468"
+date-released: "2026-06-22"
+doi: "10.1109/IV66570.2026.11624013"
+url: "https://doi.org/10.1109/IV66570.2026.11624013"
 repository-code: "https://github.com/Danial-Safaei/DFF"
 keywords:
   - decisive feature fidelity
   - DFF
-  - OVF
-  - synthetic data
-  - virtual kitti
+  - output value fidelity
+  - synthetic data fidelity
+  - explainable AI
+  - counterfactual explanations
+  - autonomous vehicle safety
+  - virtual KITTI
 license: "CC-BY-4.0"
 preferred-citation:
-  type: article
-  title: "Quantifying and Bridging the Fidelity Gap: A Decisive-Feature Approach to Comparing Synthetic and Real Imagery"
+  type: conference-paper
+  title: "Quantifying Fidelity: A Decisive Feature Approach to Comparing Synthetic and Real Imagery"
   authors:
     - family-names: Safaei
       given-names: Danial
+      orcid: "https://orcid.org/0000-0002-4443-8763"
     - family-names: Khastgir
       given-names: Siddartha
     - family-names: Alirezaei
       given-names: Mohsen
     - family-names: Ploeg
       given-names: Jeroen
+    - family-names: Cheng
+      given-names: Chih-Hong
     - family-names: Tong
       given-names: Son
     - family-names: Zhao
       given-names: Xingyu
-  doi: "10.48550/arXiv.2512.16468"
-  url: "https://arxiv.org/abs/2512.16468"
-  journal: "arXiv preprint arXiv:2512.16468"
-  year: 2025
+  collection-title: "2026 IEEE Intelligent Vehicles Symposium (IV)"
+  conference:
+    name: "2026 IEEE Intelligent Vehicles Symposium (IV)"
+    city: "Detroit"
+    region: "Michigan"
+    country: "US"
+  start: 847
+  end: 854
+  year: 2026
+  month: 6
+  doi: "10.1109/IV66570.2026.11624013"
+  url: "https://doi.org/10.1109/IV66570.2026.11624013"
