@@ -7,7 +7,7 @@ This repo contains the training wrappers and dataset manifests used in the paper
 **Quantifying Fidelity: A Decisive Feature Approach to Comparing Synthetic and Real Imagery**
 Danial Safaei, Siddartha Khastgir, Mohsen Alirezaei, Jeroen Ploeg, Chih-Hong Cheng, Son Tong, Xingyu Zhao
 
-Published in the *2026 IEEE Intelligent Vehicles Symposium (IV)*, pp. 847-854, Detroit, MI, USA, June 2026.
+Published in the *2026 IEEE Intelligent Vehicles Symposium (IV)*, pp. 847-854, Plymouth, MI, USA, June 2026.
 
 - IEEE Xplore (DOI): https://doi.org/10.1109/IV66570.2026.11624013
 - arXiv preprint: https://arxiv.org/abs/2512.16468
@@ -22,11 +22,20 @@ If you use this repository, please cite the published version:
   booktitle = {2026 IEEE Intelligent Vehicles Symposium (IV)},
   pages     = {847--854},
   year      = {2026},
-  address   = {Detroit, MI, USA},
+  address   = {Plymouth, MI, USA},
   publisher = {IEEE},
   doi       = {10.1109/IV66570.2026.11624013}
 }
 ```
+
+### Follow-up work
+**C-DFF: Concept-Level Diagnostics for Mechanism Parity in Simulation-Based Validation of Autonomous Driving Perception**
+Danial Safaei, Siddartha Khastgir, Matthew Higgins, Jeroen Ploeg, Mohsen Alirezaei, Son Tong, Ludo Gielen
+*2026 IEEE 29th International Conference on Intelligent Transportation Systems (ITSC)*, Naples, Italy (in press).
+
+- arXiv: https://arxiv.org/abs/2610.33760
+
+C-DFF expresses decisive evidence, extracted with its own perturbation-based estimator, in terms of semantic scene concepts such as road, building and sky, to show which concepts a model relies on more, or less, in simulation. Its code is not part of this repository.
 
 ## What’s in this repo (minimal)
 
